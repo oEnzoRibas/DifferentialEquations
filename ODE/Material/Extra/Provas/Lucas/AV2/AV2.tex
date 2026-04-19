@@ -1,0 +1,178 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{lineno}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % acentua??o
+%\usepackage[brazil]{babel}
+%\usepackage{amsfonts}
+\usepackage{graphicx,graphpap}
+\usepackage{enumitem}
+%\graphicspath{{dissertação/}}
+%graphpap permite quadricular figuras com o comando graphpaper para sabermos onde
+%inserir as letras. depois de quadricularmos porcentamos o comando
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{makeidx}
+%\usepackage{eufrak}
+%\usepackage{pst-plot}
+\usepackage{graphicx,color}
+\usepackage{float}
+\usepackage[top=3cm,left=3cm,right=2cm,bottom=2cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{epstopdf}
+%\usepackage{yhmath}
+\usepackage{fancyhdr}
+\usepackage{anonchap}
+\usepackage{verbatim}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{caption}
+\captionsetup[table]{skip=10pt}
+\usepackage{subcaption}
+\usepackage{xlop}
+\usepackage{parcolumns}
+
+\newtheorem{teorema}{Theorem}[chapter]
+\newtheorem{corolario}[teorema]{Corollary}
+\newtheorem{definicao}[teorema]{Definition}
+\newtheorem{lema}[teorema]{Lemma}
+\newtheorem{prop}[teorema]{Proposition}
+\newtheorem{obs}[teorema]{Remark}
+\newtheorem{exe}[teorema]{Example}
+\newcommand{\whitebox}{$\Box$}
+\newcommand{\blackbox}{$\blacksquare$}
+\newtheorem{ex}[teorema]{Exerc\'icio}
+\newtheorem{assump}{Assumption}
+\renewcommand\theassump{A\arabic{assump}}
+\newtheorem{scheme}{Scheme}
+
+\newenvironment{prova}[1][Proof]{\textbf{#1.} }{\hfill\whitebox\bigskip}
+%\newtheorem{obs}[Remark]{\textbf{#1.} }{\hfill\whitebox\bigskip}
+
+\newcommand{\fracd}[2]{  \frac {\displaystyle {#1}}{\displaystyle {#2}}   }
+%\newcommand{\intd}[3]{ \displaystyle {\int_{#1}^{#2}{#3}}d\theta}
+\newcommand{\inte}[2]{ \displaystyle {\int_{#1}{#2}}dx}
+\newcommand{\g }{\gamma}
+\newcommand{\la }{\lambda}
+\newcommand{\ep}{\epsilon}
+\newcommand{\implica}{\Rightarrow}
+\newcommand{\seta}{\rightarrow}
+\newcommand{\esp}{\vspace*{0.5 cm}}
+\newcommand{\h}{\hspace*{8mm}}
+\newcommand{\divi}{\textrm{div}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\demo}{{\bf{Demonstra\c{c}\~{a}o:}}\\}
+\newcommand{\sen}{\textrm{sen}}
+\newcommand{\senh}{\textrm{senh}}
+\newcommand{\cupdot}{\mathbin{\mathaccent\cdot\cup}}
+\newcommand{\Tau}{\mathcal{T}}
+\newcommand{\bTau}{\partial\mathcal{T}}
+\newcommand{\Xtil}{\widetilde{X}}
+\newcommand{\Mtil}{\widetilde{M}}
+\newcommand{\Xbar}{\bar{X}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\Om}{\Omega}
+\newcommand{\bOm}{\partial\Omega}
+\newcommand{\bK}{\partial K}
+\newcommand{\dt}{\partial_t}
+\newcommand{\essup}{\textrm{ess\ sup}}
+\newcommand{\Epsilon}{\mathcal{E}}
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\ttau}{\tilde{\tau}}
+\newcommand{\tlambda}{\tilde{\lambda}}
+\newcommand{\haat}{\widehat}
+\newcommand{\pr}{\mathcal{P}}
+\newcommand{\prt}{\mathcal{P}^{\Delta t}}
+\newcommand{\epsilont}{\mathcal{E}^{\Delta t}}
+\newcommand{\etal}{\eta_{\lambda}}
+\newcommand{\etali}{\eta_i}
+\newcommand{\etatau}{\eta_{\tau}}
+\newcommand{\hetatau}{\widehat{\eta_{\tau}}}
+\newcommand{\etataui}{\eta_{\tau,i}}
+\newcommand{\etaf}{\eta_f}
+\newcommand{\hetaf}{\widehat{\eta_f}}
+\newcommand{\etalik}{\eta_{\lambda,K,i}}
+\newcommand{\etatauik}{\eta_{\tau,K,i}}
+\newcommand{\Deltat}{\Delta t}
+\newcommand{\DeltaT}{\Delta T}
+\newcommand{\Pp}{\mathbb{P}}
+\newcommand{\llambda}{\lambda^*}
+\newcommand{\tiu}{\tilde{u}}
+\newcommand{\tpsi}{\tilde{\psi}}
+\newcommand{\Lam}{\Lambda^{\Deltat}_h}
+\newcommand{\tLam}{\tilde{\Lambda}^{\Deltat}_h}
+\newcommand{\muht}{\mu^{\Deltat}_h}
+\newcommand{\tmuht}{\tilde{\mu}^{\Deltat}_h}
+\newcommand{\hpsi}{\widehat{\psi}}
+\newcommand{\hetali}{\widehat{\eta_{i}}}
+\newcommand{\hetal}{\widehat{\eta_{\lambda}}}
+\newcommand{\ddt}{\dfrac{d}{dt}}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+
+
+\def\dash---{\kern.16667em---\penalty\exhyphenpenalty\hskip.16667em\relax}
+
+%--------------cabeçalho do documento----------------
+\fancyhf{}
+\fancyhead[L]{\rightmark}
+\fancyfoot[C]{\thepage}
+\pagestyle{fancy}
+%--------------------------------------------------------
+\begin{document}
+\begin{tabular}{lllll}
+\multirow{3}*{\includegraphics[width=60px]{CFUVR/logo.png}}&\multicolumn{4}{c}{\large \textbf{Centro Federal de Educação Tecnológica de Minas Gerais}}\\
+&\textbf{Professor}: Lucas Martins Rocha\ \  \textbf{Disciplina}: EDO \\
+&\textbf{Turmas}: 1\ \ \textbf{Semestre}: 25-2 \\
+&\textbf{Atividade}: Avaliação 2 \ \ \ \textbf{Nota}:\underline{\hspace{1cm}}/19pts\\
+&\textbf{Estudante}:\underline{\hspace{10cm}}
+\end{tabular}
+%-------------------------------------------------------
+\begin{itemize}
+    \item Respostas sem justificativas \textbf{NÃO} serão consideradas.
+    \item Essa prova tem o valor de \textbf{19 pontos}.
+
+\end{itemize}
+
+\begin{enumerate}
+    \item Considerando a equação diferencial
+    \[
+    (x+3)y'' + (x+2)y' - y = 0,
+    \]
+    faça o que se pede:
+    \begin{enumerate}
+        \item Mostre que $y_1(x)=e^{-x}$ é ima solução da EDO. (2 pts)
+        \item Determine uma segunda solução $y_2(x)$ de forma que $y_1$ e $y_2$ sejam soluções fundamentais da equação. (3 pts)
+        \item Determine a solução geral da EDO e, em seguida, a solução do PVI com condição inciial $y(1)=1$ e $y'(1)=3$. (2 pts)
+    \end{enumerate}
+    \newpage
+    \textbf{Estudante}:\underline{\hspace{10cm}}
+
+    \item  (6 pts) Use o método de \textbf{variação dos parâmetros} para resolver o PVI
+    \[
+    \begin{cases}
+        y'' + y' - 2y = t^2 + 3\\
+        y(0)=0, y'(0)=0
+    \end{cases}
+    \]
+    Resolva de forma organizada, deixando claro todo o processo de resolução. Não faça apenas cálculos, um texto orientando a leitura da resolução é essencial.
+    
+    \newpage
+    \textbf{Estudante}:\underline{\hspace{10cm}}
+    \item (6 pts) Use o método de \textbf{coeficientes a determinar} para resolver o PVI
+    \[
+    \begin{cases}
+        y'' + 2y' + 2y = e^t\sen(t)\\
+        y(0)=0, y'(0)=0
+    \end{cases}
+    \]
+    Resolva de forma organizada, deixando claro todo o processo de resolução. Não faça apenas cálculos, um texto orientando a leitura da resolução é essencial.
+    
+\end{enumerate}
+
+\end{document}
